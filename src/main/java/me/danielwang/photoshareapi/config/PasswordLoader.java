@@ -27,4 +27,7 @@ public class PasswordLoader {
 
     @Value("${earlyAccessToken}")
     private String accessToken;
+
+    @Value("${server.ssl.key-store-password}")
+    private String sslPassword;
 }

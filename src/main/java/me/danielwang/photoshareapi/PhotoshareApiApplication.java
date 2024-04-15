@@ -32,4 +32,7 @@ public class PhotoshareApiApplication {
 
     @Value("${accessToken}")
     private String accessToken;
+
+    @Value("${server.ssl.key-store-password}")
+    private String sslPassword;
 }
