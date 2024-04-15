@@ -21,6 +21,9 @@ public class PhotoshareApiApplication {
     @Value("${spring.datasource.url}")
     private String dataSourceLocation;
 
+    @Value("${spring.datasource.username}")
+    private String dataSourceUser;
+
     @Value("${jwtExpirationMs}")
     private String jwtExpirationMs;
 

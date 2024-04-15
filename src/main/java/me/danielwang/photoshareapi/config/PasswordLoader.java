@@ -16,6 +16,9 @@ public class PasswordLoader {
     @Value("${postgresdb}")
     private String dblocation;
 
+    @Value("${postgresuser}")
+    private String dbUser;
+
     @Value("${jwtExpirationMs}")
     private String jwtExpirationMs;
 
