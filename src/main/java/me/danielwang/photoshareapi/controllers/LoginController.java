@@ -87,7 +87,7 @@ public class LoginController {
     }
 
     public boolean isValidPassword(String password) {
-        String regex = "^(?=.*[0-9])(?=.*[!@#$%^&*()])(?=\\S+$).{8,}$"; // one symbol, number, and at least 8 characters
+        String regex = "^(?=.*[0-9])(?=.*[!@#$%^&*()\\-_=+\\[\\]{}\\\\|;:'\",<.>/?])(?=\\S+$).{8,20}$"; // one symbol, number, and between 8 and 20 characters
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
@@ -107,7 +107,7 @@ public class LoginController {
         }
 
         if (!isValidPassword(signupDto.getPassword())) {
-            return new ResponseEntity<>("Password must be at least 8 characters long and contain a number and symbol.", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Password must be between 8 and 20 characters long and contain a number and symbol.", HttpStatus.BAD_REQUEST);
         }
 
         if (!Objects.equals(signupDto.getToken(), accessToken)) {
